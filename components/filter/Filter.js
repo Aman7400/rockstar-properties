@@ -1,4 +1,5 @@
-import { Box, Button, Heading, HStack, Icon, VStack } from "@chakra-ui/react";
+import { Box, Button, Heading, HStack, VStack } from "@chakra-ui/react";
+import { Icon } from "@iconify/react";
 import CurrentLocation from "./CurrentLocation";
 import { Features } from "./Features";
 import PlaceTypes from "./PlaceTypes";
