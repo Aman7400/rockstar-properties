@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
             <HStack flex={1}>
                 {/* Filter */}
                 <FilterBox />
-                <Box >
+                <Box w={"70%"} >
                     {children}
                 </Box>
             </HStack>
