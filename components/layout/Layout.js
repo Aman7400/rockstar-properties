@@ -1,4 +1,4 @@
-import { Box, Container, HStack, IconButton, Input, InputGroup, InputLeftElement, Text } from '@chakra-ui/react'
+import { Box, Button, Container, Heading, HStack, IconButton, Input, InputGroup, InputLeftElement, Text, VStack } from '@chakra-ui/react'
 import { Icon } from '@iconify/react'
 import React from 'react'
 
@@ -7,12 +7,10 @@ const Layout = ({ children }) => {
         <Container maxW="container.xl" minHeight={"100vh"}>
             {/* Appbar */}
             <Appbar />
-            <HStack>
+            <HStack flex={1}>
                 {/* Filter */}
-                <Box>
-                    Filter
-                </Box>
-                <Box>
+                <FilterBox />
+                <Box >
                     {children}
                 </Box>
             </HStack>
@@ -51,5 +49,23 @@ function Footer() {
                 &copy;  {new Date().getFullYear()}
             </Text>
         </Container>
+    )
+}
+
+function FilterBox() {
+    return (
+        <VStack w={"30%"} p={4}>
+           <HStack w="100%" justifyContent="space-between">
+           <Heading size={"md"}>Filters</Heading>
+           <Button isRound size="sm" rightIcon={<Icon icon="ic:baseline-clear" />}>
+                Clear All
+           </Button>
+           </HStack>
+            {
+                [1,2,3,4,5].map((_,i) => {
+                    return <Input key={i} size="lg" mb={2} variant="filled" placeholder={`${i} input`} /> 
+                })
+            }
+        </VStack>
     )
 }
