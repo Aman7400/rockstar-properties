@@ -1,7 +1,8 @@
-import { Box, Container, HStack, IconButton, Text } from '@chakra-ui/react'
-import { Icon } from '@iconify/react'
+import { Box, Container, HStack } from '@chakra-ui/react'
 import React from 'react'
 import FilterBox from '../filter/Filter'
+import Appbar from './Appbar'
+import Footer from './Footer'
 
 const Layout = ({ children }) => {
     return (
@@ -23,35 +24,7 @@ const Layout = ({ children }) => {
 export default Layout
 
 
-function Appbar() {
-    return (
-        <HStack justifyContent={"space-between"} p={4}>
-            {/* Filter */}
-            <Box>
-                <IconButton icon={<Icon icon="bi:filter-left" />} />
-            </Box>
-            {/* Brand */}
-            <Text>
-                Rockstar Properties
-            </Text>
-            {/* Search & Notification */}
-            <HStack >
-                <IconButton isRound icon={<Icon icon="fa6-solid:magnifying-glass-location" />} />
-                <IconButton variant="ghost" icon={<Icon icon="clarity:notification-solid-badged" />} />
-            </HStack>
-        </HStack>
-    )
-}
 
-function Footer() {
-    return (
-        <Container w="container.xl">
-            <Text>
-                &copy;  {new Date().getFullYear()}
-            </Text>
-        </Container>
-    )
-}
 
 
 
