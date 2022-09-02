@@ -1,4 +1,6 @@
-import { Box, Container, HStack } from '@chakra-ui/react'
+import { Box, Container, Heading, HStack, IconButton, Text } from '@chakra-ui/react'
+import { Icon } from '@iconify/react'
+import Link from 'next/link'
 import React from 'react'
 import FilterBox from '../filter/Filter'
 import Appbar from './Appbar'
@@ -6,9 +8,10 @@ import Footer from './Footer'
 
 const Layout = ({ children }) => {
     return (
-        <Container maxW="container.xl" minHeight={"100vh"}>
+        <Container maxW="container.xl" position="relative" minHeight={"100vh"}>
             {/* Appbar */}
             <Appbar />
+            <ChatWithUs />
             <HStack flex={1}>
                 {/* Filter */}
                 <FilterBox />
@@ -18,6 +21,23 @@ const Layout = ({ children }) => {
             </HStack>
             <Footer />
         </Container>
+    )
+}
+
+function ChatWithUs() {
+    const [isHovering, setIsHovering] = React.useState(false)
+    return (
+        <HStack transition={"ease-in-out"} transitionDuration="800ms" p={3} cursor={"pointer"} borderRadius="100" bgColor="green.100" position="fixed" right="36px" bottom="36px" onMouseOver={() => setIsHovering(true)} onMouseOut={() => setIsHovering(false)}>
+            <Icon style={{
+                fontSize: 24
+            }} icon={"logos:whatsapp-icon"} />
+            {isHovering &&
+                <Heading size="sm" color={"green.500"}>
+                    <Link href={"https://wa.me/6283534495"}>
+                        Chat with Us
+                    </Link>
+                </Heading>}
+        </HStack>
     )
 }
 
