@@ -11,7 +11,7 @@ export default function FilterBox() {
         <VStack w={"30%"} p={6} shadow="lg" borderRadius={"md"}>
             <HStack w="100%" justifyContent="space-between">
                 <Heading size={"md"}>Filters</Heading>
-                <Button isRound size="sm" rightIcon={<Icon icon="ic:baseline-clear" />}>
+                <Button isRounded size="sm" rightIcon={<Icon icon="ic:baseline-clear" />}>
                     Clear All
                 </Button>
             </HStack>

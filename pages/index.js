@@ -2,6 +2,7 @@
 import { Box, Button, Grid, GridItem, Heading, Text } from '@chakra-ui/react'
 import Head from 'next/head'
 import Link from 'next/link'
+import allProperties from '../data/properties'
 
 export default function Home() {
   return (
@@ -18,8 +19,8 @@ export default function Home() {
         </Heading>
         <Grid w={"100%"} height={520} overflowY="scroll" my={4} templateColumns='repeat(3, 1fr)' gap={6}>
           {
-            [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18].map((property, index) =>
-              <Link key={index} href={`/details/${property}`}>
+            allProperties.map((property, index) =>
+              <Link key={index} href={`/details/${property.name}`}>
                 <GridItem  cursor="pointer" borderRadius="md" colSpan={1} p={4} shadow="md">
                   <Box overflow={"hidden"} className='hover-zoom' w={"100%"} bgColor="purple.100">
                     <img alt='property' src="/yo.jpeg" style={{
@@ -30,10 +31,10 @@ export default function Home() {
                   </Box>
                   <Box p={2}>
                     <Heading size="md" mb={1}>
-                      Property  {property}
+                      Property  {property.name}
                     </Heading>
                     <Text>
-                      Beverly Hills
+                      {property.description.slice(0,25) + '...'}
                     </Text>
                   </Box>
                 </GridItem></Link>
