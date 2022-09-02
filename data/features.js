@@ -1,0 +1,1 @@
+export const allFeatures =  ["AC & Heating", "Clubhouse", "Dishwasher", "Spa", "Balcony", "Pool", "Fitness Center", "Valet Parking"]
