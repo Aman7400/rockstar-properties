@@ -12,13 +12,7 @@ const Layout = ({ children }) => {
             {/* Appbar */}
             <Appbar />
             <ChatWithUs />
-            <HStack flex={1}>
-                {/* Filter */}
-                <FilterBox />
-                <Box w={"70%"} >
-                    {children}
-                </Box>
-            </HStack>
+           {children}
             <Footer />
         </Container>
     )
