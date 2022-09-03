@@ -1,18 +1,31 @@
 import { Box, Container, Heading, HStack, IconButton, Text } from '@chakra-ui/react'
 import { Icon } from '@iconify/react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import React from 'react'
+import { AuthContext } from '../../contexts/AuthContext'
 import FilterBox from '../filter/Filter'
 import Appbar from './Appbar'
 import Footer from './Footer'
 
 const Layout = ({ children }) => {
+    const { isLoggedIn } = React.useContext(AuthContext)
+
+    const router = useRouter()
+
+    React.useEffect(() => {
+        if (!isLoggedIn) {
+            router.push("/auth/login")
+        }
+
+    }, [isLoggedIn, router])
+
     return (
         <Container maxW="container.xl" position="relative" minHeight={"100vh"}>
             {/* Appbar */}
             <Appbar />
             <ChatWithUs />
-           {children}
+            {children}
             <Footer />
         </Container>
     )

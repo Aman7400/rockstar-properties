@@ -20,7 +20,6 @@ export default function Appbar() {
 
     const filterProperties = allProperties.filter(prop => prop.name.includes(search.toLowerCase()))
 
-    console.log(filterProperties);
 
 
 

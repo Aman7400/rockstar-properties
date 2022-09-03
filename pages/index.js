@@ -2,10 +2,17 @@
 import { Box, Button, Grid, GridItem, Heading, HStack, Text } from '@chakra-ui/react'
 import Head from 'next/head'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
+import React from 'react'
 import FilterBox from '../components/filter/Filter'
+import { AuthContext } from '../contexts/AuthContext'
 import allProperties from '../data/properties'
 
 export default function Home() {
+
+
+
+
 
   return (
     <div>

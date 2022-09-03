@@ -8,9 +8,7 @@ import allProperties from '../../data/properties';
 
 const DetailsView = () => {
   const { query, back, push } = useRouter();
-  console.log(query.propertyId);
   const property = allProperties.filter(prop => prop.name === query.propertyId)[0]
-  console.log(property);
   return (
     <Box w={"100%"} p={4} height={"600px"} overflowY="scroll" >
       <HStack w={"100%"} position="relative">
